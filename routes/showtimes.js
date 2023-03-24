@@ -5,8 +5,12 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const newShowtime = req.body;
-  const id = await createShowtime(newShowtime);
-  res.send(`Success, added ${newShowtime.movieTitle} - ${id}`);
+  try {
+    const id = await createShowtime(newShowtime);
+    res.send(`Success, added ${newShowtime.movieTitle} - ${id}`);
+  } catch (error) {
+    res.status(403).send(error.message);
+  }
 });
 
 export default router;

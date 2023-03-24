@@ -16,6 +16,12 @@ const showTimeSchema = mongoose.Schema({
 const Showtime = mongoose.model("showtime", showTimeSchema);
 
 export const createShowtime = async (newShowtime) => {
-  const createdShowtime = await Showtime.create(newShowtime);
-  return createdShowtime._id;
+  try {
+    const createdShowtime = await Showtime.create(newShowtime);
+    return createdShowtime._id;
+  } catch (error) {
+    if ((error.code = 11000)) {
+      throw new Error("Duplicate Error");
+    }
+  }
 };
