@@ -13,4 +13,7 @@ const Showtime = mongoose.model("showtime", showTimeSchema);
 
 const showtimes = await Showtime.find();
 
-console.log(showtimes);
+export const createShowtime = async (newShowtime) => {
+  console.log("newShowtime is", newShowtime);
+  return 0;
+};

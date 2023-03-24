@@ -1,10 +1,12 @@
 import express from "express";
+import { createShowtime } from "../models/showtimes.js";
 
 const router = express.Router();
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   const newShowtime = req.body;
-  const id = createShowtime(newShowtime);
+  console.log(newShowtime);
+  const id = await createShowtime(newShowtime);
   res.send(`Success, added ${newShowtime.movieTitle} - ${id}`);
 });
 
