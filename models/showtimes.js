@@ -25,3 +25,20 @@ export const createShowtime = async (newShowtime) => {
     }
   }
 };
+
+export const listShowtimes = async () => {
+  const allShowtimes = await Showtime.find();
+  return allShowtimes;
+};
+
+export const updateShowtime = async (id, newShowtimeData) => {
+  const response = await Showtime.findByIdAndUpdate(id, newShowtimeData, {
+    new: true,
+  });
+  return response;
+};
+
+export const deleteShowtime = async (id) => {
+  const response = await Showtime.findByIdAndDelete(id);
+  return response;
+};
