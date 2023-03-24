@@ -2,7 +2,7 @@ import mongoose from "../mongoose.js";
 
 const showTimeSchema = mongoose.Schema({
   movieTitle: String,
-  startTime: Date,
+  startTime: String,
   runTime: Number,
   rating: String,
   genre: String,
@@ -11,9 +11,7 @@ const showTimeSchema = mongoose.Schema({
 
 const Showtime = mongoose.model("showtime", showTimeSchema);
 
-const showtimes = await Showtime.find();
-
 export const createShowtime = async (newShowtime) => {
-  console.log("newShowtime is", newShowtime);
-  return 0;
+  const createdShowtime = await Showtime.create(newShowtime);
+  return createdShowtime._id;
 };
