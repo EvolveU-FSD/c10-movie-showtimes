@@ -7,4 +7,6 @@ const connectionString = process.env.MONGO_URL;
 
 const db = await mongoose.connect(connectionString);
 
+console.log("connected");
+
 export default db;
