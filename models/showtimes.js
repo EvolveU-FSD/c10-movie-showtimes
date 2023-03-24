@@ -1,8 +1,12 @@
 import mongoose from "../mongoose.js";
 
 const showTimeSchema = mongoose.Schema({
-  movieTitle: String,
-  startTime: String,
+  movieTitle: { type: String, required: true },
+  startTime: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   runTime: Number,
   rating: String,
   genre: String,
