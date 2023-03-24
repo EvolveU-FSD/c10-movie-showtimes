@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/EvolveU-FSD/c10-movie-showtimes#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
