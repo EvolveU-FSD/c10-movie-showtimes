@@ -42,3 +42,18 @@ export const deleteShowtime = async (id) => {
   const response = await Showtime.findByIdAndDelete(id);
   return response;
 };
+
+export const findAllShowtimesByGenre = async (genre) => {
+  const showtimes = await Showtime.find({ genre });
+  return showtimes;
+};
+
+export const findOneShowtimeByMovieTitle = async (title) => {
+  const showtime = await Showtime.findOne({ movieTitle: title });
+  return showtime;
+};
+
+export const findShowtimeById = async (id) => {
+  const showtime = await Showtime.findById(id);
+  return showtime;
+};
