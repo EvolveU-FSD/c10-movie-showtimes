@@ -8,7 +8,7 @@ import {
   updateShowtime,
 } from "../models/showtimes.js";
 
-const router = express.Router();
+const router = express.Router()
 
 router.post("/", async (req, res) => {
   const newShowtime = req.body;
